@@ -1,6 +1,6 @@
 # 1. Устанавливаем и настраиваем
 ```shell
-composer create-project laravel/laravel
+composer create-project laravel/laravel .
 php artisan install:api
 php artisan config:publish cors
 ```
