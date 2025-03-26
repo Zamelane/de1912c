@@ -3,17 +3,21 @@
 @section('title', 'Список партнёров')
 
 @section('content')
+
+    <a class="btn" href="{{ route('partners.create') }}">Создать партнёра</a>
     @foreach($partners as $partner)
-        <div class="flex border">
-            <div class="div85">
-                <div class="bigFontSize">{{ $partner->partnerType->name }} | {{ $partner->name }}</div>
-                <div>{{ $partner->director }}</div>
-                <div>+7 {{ $partner->phone }}</div>
-                <div>Рейтинг: {{ $partner->raiting }}</div>
+        <a href="/partners/edit/{{ $partner->id }}">
+            <div class="flex border">
+                <div class="div85">
+                    <div class="bigFontSize">{{ $partner->partnerType->name }} | {{ $partner->name }}</div>
+                    <div>{{ $partner->director }}</div>
+                    <div>+7 {{ $partner->phone }}</div>
+                    <div>Рейтинг: {{ $partner->raiting }}</div>
+                </div>
+                <div class="div15">
+                    {{ $partner->discount }}%
+                </div>
             </div>
-            <div class="div15">
-                {{ $partner->discount }}%
-            </div>
-        </div>
+        </a>
     @endforeach
 @endsection
